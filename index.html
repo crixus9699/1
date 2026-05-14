@@ -481,4 +481,152 @@
             
             const eduList = document.getElementById('educationList');
             eduList.innerHTML = data.education.map(edu => {
-               
+                const parts = edu.split(' - ');
+                return `<li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>${parts[0]}</strong>${parts[1] ? ' - ' + parts[1] : ''}</span></li>`;
+            }).join('');
+            
+            const servicesGrid = document.getElementById('servicesGrid');
+            servicesGrid.innerHTML = data.services.map((service, i) => `
+                <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="${i * 100}">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas ${service.icon} text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">${service.title}</h3>
+                    <p class="text-gray-600">${service.desc}</p>
+                </div>
+            `).join('');
+            
+            const reviewsGrid = document.getElementById('reviewsGrid');
+            reviewsGrid.innerHTML = data.reviews.map((review, i) => `
+                <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="${i * 100}">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        ${Array(Math.floor(review.rating)).fill('<i class="fas fa-star"></i>').join('')}
+                        ${review.rating % 1 !== 0 ? '<i class="fas fa-star-half-alt"></i>' : ''}
+                        ${Array(5 - Math.ceil(review.rating)).fill('<i class="far fa-star"></i>').join('')}
+                    </div>
+                    <p class="text-gray-700 mb-4">"${review.text}"</p>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-user-circle text-3xl text-blue-600"></i>
+                        <div><strong>${review.name}</strong><p class="text-gray-500 text-sm">${review.date}</p></div>
+                    </div>
+                </div>
+            `).join('');
+            
+            AOS.refresh();
+        }
+        
+        // ========== হোয়াটসঅ্যাপ ফর্ম হ্যান্ডলার ==========
+        function initWhatsAppForm() {
+            const form = document.getElementById('appointmentForm');
+            const messageDiv = document.getElementById('formMessage');
+            
+            if(form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('patientName').value.trim();
+                    const phone = document.getElementById('patientPhone').value.trim();
+                    const email = document.getElementById('patientEmail').value.trim();
+                    const service = document.getElementById('patientService').value;
+                    const problem = document.getElementById('patientProblem').value.trim();
+                    
+                    // ভ্যালিডেশন
+                    if(!name || !phone) {
+                        messageDiv.innerHTML = '⚠️ দয়া করে আপনার নাম এবং মোবাইল নম্বর দিন!';
+                        messageDiv.className = 'mt-4 p-3 rounded-xl text-center bg-red-100 text-red-700 success-message';
+                        messageDiv.classList.remove('hidden');
+                        setTimeout(() => messageDiv.classList.add('hidden'), 4000);
+                        return;
+                    }
+                    
+                    if(!service) {
+                        messageDiv.innerHTML = '⚠️ দয়া করে একটি সেবা নির্বাচন করুন!';
+                        messageDiv.className = 'mt-4 p-3 rounded-xl text-center bg-red-100 text-red-700 success-message';
+                        messageDiv.classList.remove('hidden');
+                        setTimeout(() => messageDiv.classList.add('hidden'), 4000);
+                        return;
+                    }
+                    
+                    // হোয়াটসঅ্যাপ মেসেজ তৈরি
+                    const currentTime = new Date().toLocaleString('bn-BD', { 
+                        timeZone: 'Asia/Dhaka',
+                        day: 'numeric',
+                        month: 'numeric',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                    
+                    const message = `🆕 *নতুন অ্যাপয়েন্টমেন্ট রিকোয়েস্ট*
+━━━━━━━━━━━━━━━━━━━━
+👤 *রোগীর নাম:* ${name}
+📞 *মোবাইল:* ${phone}
+${email ? `📧 *ইমেইল:* ${email}` : ''}
+🩺 *সেবার ধরণ:* ${service}
+📝 *সমস্যা:* ${problem || "উল্লেখ নেই"}
+⏰ *সময়:* ${currentTime}
+━━━━━━━━━━━━━━━━━━━━
+_ওয়েবসাইট থেকে অ্যাপয়েন্টমেন্ট রিকোয়েস্ট_`;
+                    
+                    // হোয়াটসঅ্যাপ ইউআরএল
+                    const whatsappUrl = `https://wa.me/${DOCTOR_WHATSAPP}?text=${encodeURIComponent(message)}`;
+                    
+                    // নতুন ট্যাবে হোয়াটসঅ্যাপ খোলা
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // সাকসেস মেসেজ দেখানো
+                    messageDiv.innerHTML = '✅ আপনার অ্যাপয়েন্টমেন্টের অনুরোধ পাঠানো হয়েছে! হোয়াটসঅ্যাপ খুললে আমাদের সাথে যোগাযোগ করুন।';
+                    messageDiv.className = 'mt-4 p-3 rounded-xl text-center bg-green-100 text-green-700 success-message';
+                    messageDiv.classList.remove('hidden');
+                    
+                    // ফর্ম রিসেট
+                    form.reset();
+                    
+                    // ৫ সেকেন্ড পর মেসেজ হাইড
+                    setTimeout(() => messageDiv.classList.add('hidden'), 6000);
+                });
+            }
+        }
+        
+        // মোবাইল মেনু
+        function initMobileMenu() {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            if(menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    if(mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                        menuIcon.classList.remove('fa-bars');
+                        menuIcon.classList.add('fa-times');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                });
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                    });
+                });
+            }
+        }
+        
+        // শুরু
+        async function init() {
+            const data = await loadFromSheets();
+            updateUI(data);
+            document.getElementById('loadingOverlay').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            AOS.init({ duration: 800, once: true, offset: 100 });
+            initMobileMenu();
+            initWhatsAppForm();
+        }
+        
+        init();
+    </script>
+</body>
+</html>
