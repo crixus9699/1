@@ -88,6 +88,22 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        /* সাকসেস মেসেজের জন্য অ্যানিমেশন */
+        .success-message {
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -240,7 +256,7 @@
             </div>
         </section>
 
-        <!-- যোগাযোগ -->
+        <!-- যোগাযোগ - হোয়াটসঅ্যাপ ফর্ম -->
         <section id="contact" class="py-24 bg-white/50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16" data-aos="fade-up">
@@ -251,27 +267,59 @@
                     <div class="glass-card p-8" data-aos="fade-right">
                         <h3 class="text-2xl font-bold mb-6">অ্যাপয়েন্টমেন্ট ফর্ম</h3>
                         <form id="appointmentForm" class="space-y-5">
-                            <input type="text" placeholder="আপনার নাম" required class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
-                            <input type="tel" placeholder="মোবাইল নম্বর" required class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
-                            <input type="email" placeholder="ইমেইল" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
-                            <select class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
-                                <option>সেবা নির্বাচন করুন</option>
-                                <option>কনসালটেশন</option>
-                                <option>কার্ডিয়াক ডায়াগনস্টিক</option>
-                                <option>প্রিভেনটিভ কেয়ার</option>
+                            <input type="text" id="patientName" placeholder="আপনার পুরো নাম" required class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
+                            <input type="tel" id="patientPhone" placeholder="মোবাইল নম্বর (যে নম্বরে WhatsApp আছে)" required class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
+                            <input type="email" id="patientEmail" placeholder="ইমেইল (ঐচ্ছিক)" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
+                            <select id="patientService" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
+                                <option value="">সেবা নির্বাচন করুন</option>
+                                <option value="কনসালটেশন">কনসালটেশন</option>
+                                <option value="কার্ডিয়াক ডায়াগনস্টিক">কার্ডিয়াক ডায়াগনস্টিক</option>
+                                <option value="প্রিভেনটিভ কেয়ার">প্রিভেনটিভ কেয়ার</option>
+                                <option value="ইমার্জেন্সি">ইমার্জেন্সি</option>
                             </select>
-                            <textarea rows="4" placeholder="আপনার সমস্যা লিখুন" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80"></textarea>
-                            <button type="submit" class="premium-btn text-white px-8 py-3 rounded-xl font-semibold w-full"><i class="fas fa-paper-plane mr-2"></i> অ্যাপয়েন্টমেন্ট বুক করুন</button>
+                            <textarea id="patientProblem" rows="4" placeholder="আপনার সমস্যা সংক্ষেপে লিখুন" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80"></textarea>
+                            <button type="submit" class="premium-btn text-white px-8 py-3 rounded-xl font-semibold w-full flex items-center justify-center gap-2">
+                                <i class="fab fa-whatsapp text-xl"></i> হোয়াটসঅ্যাপে অ্যাপয়েন্টমেন্ট বুক করুন
+                            </button>
                         </form>
-                        <p id="formMessage" class="text-green-600 mt-4 text-center hidden"></p>
+                        <div id="formMessage" class="hidden mt-4 p-3 rounded-xl text-center success-message"></div>
                     </div>
                     <div class="glass-card p-8" data-aos="fade-left">
                         <h3 class="text-2xl font-bold mb-6">সরাসরি যোগাযোগ</h3>
                         <div class="space-y-6">
-                            <div class="flex items-center gap-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fas fa-phone-alt text-blue-600 text-xl"></i></div><div><p class="font-semibold">ফোন</p><p id="contactPhone" class="text-gray-600">+৮৮ ০১৭১২-৩৪৫৬৭৮</p></div></div>
-                            <div class="flex items-center gap-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fab fa-whatsapp text-green-500 text-xl"></i></div><div><p class="font-semibold">হোয়াটসঅ্যাপ</p><p id="contactWhatsapp" class="text-gray-600">+৮৮ ০১৭১২-৩৪৫৬৭৮</p></div></div>
-                            <div class="flex items-center gap-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fas fa-envelope text-blue-600 text-xl"></i></div><div><p class="font-semibold">ইমেইল</p><p id="contactEmail" class="text-gray-600">dr.arefin@heartcare.com</p></div></div>
-                            <div class="pt-4 border-t border-blue-100"><p class="font-semibold mb-2">চেম্বার সময়:</p><p id="clinicHours">সোম-শুক্র: সন্ধ্যা ৬টা - ৯টা<br>শনিবার: সকাল ১০টা - দুপুর ১টা<br>রবিবার: বন্ধ</p></div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">হোয়াটসঅ্যাপ (দ্রুত সাড়া)</p>
+                                    <p id="contactWhatsapp" class="text-gray-600 text-lg font-semibold">+৮৮ ০১৭১২-৩৪৫৬৭৮</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone-alt text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">কল করুন</p>
+                                    <p id="contactPhone" class="text-gray-600">+৮৮ ০১৭১২-৩৪৫৬৭৮</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">ইমেইল</p>
+                                    <p id="contactEmail" class="text-gray-600">dr.arefin@heartcare.com</p>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-blue-100">
+                                <p class="font-semibold mb-2 flex items-center gap-2">
+                                    <i class="fas fa-clock text-blue-600"></i> চেম্বার সময়:
+                                </p>
+                                <p id="clinicHours" class="text-gray-600">সোম-শুক্র: সন্ধ্যা ৬টা - ৯টা<br>শনিবার: সকাল ১০টা - দুপুর ১টা<br>রবিবার: বন্ধ</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -281,9 +329,10 @@
         <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12">
             <div class="container mx-auto px-6 text-center">
                 <div class="flex justify-center space-x-6 mb-6">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-600 transition"><i class="fab fa-whatsapp"></i></a>
                     <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink-600 transition"><i class="fab fa-instagram"></i></a>
                 </div>
                 <p id="footerText" class="text-gray-400">© ২০২৫ সর্বস্বত্ব সংরক্ষিত</p>
             </div>
@@ -291,11 +340,14 @@
     </main>
 
     <script>
-        // ========== গুগল শীট কনফিগারেশন ==========
-        // ★★★ আপনার গুগল শীটের CSV লিংক এখানে বসান ★★★
-        const GOOGLE_SHEETS_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQz3nmIYuJ6DwCgaAMcEami5zH1E2KKeopVk-exDdEv06IVBWVjFIbeYS20V0n8tJtrNpVAD7td0j8D/pub?output=csv";  // যেমন: "https://docs.google.com/spreadsheets/d/xxxxx/export?format=csv"
+        // ========== হোয়াটসঅ্যাপ কনফিগারেশন ==========
+        // ★★★ আপনার হোয়াটসঅ্যাপ নম্বর এখানে দিন (কান্ট্রি কোড সহ, +88 ছাড়া) ★★★
+        const DOCTOR_WHATSAPP = "8801712345678";  // উদাহরণ: 8801712345678
         
-        // ডিফল্ট ডেটা (গুগল শীট না থাকলে এটা দেখাবে)
+        // ========== গুগল শীট কনফিগারেশন ==========
+        const GOOGLE_SHEETS_URL = "";  // আপনার CSV লিংক দিন
+        
+        // ডিফল্ট ডেটা
         const DEFAULT_DATA = {
             doctorName: "ডা. আরেফিন রহমান",
             doctorBadge: "বিশ্বমানের কার্ডিওলজিস্ট",
@@ -326,14 +378,13 @@
             ]
         };
         
-        // CSV পার্স করার ফাংশন
+        // CSV পার্সার
         function parseCSV(csvText) {
             const rows = [];
             const lines = csvText.split('\n');
             for(let i = 0; i < lines.length; i++) {
                 const line = lines[i].trim();
                 if(line) {
-                    // সহজ CSV পার্সিং (কমা সেপারেটেড)
                     const values = [];
                     let current = '';
                     let inQuotes = false;
@@ -357,26 +408,20 @@
         // গুগল শীট থেকে ডেটা লোড
         async function loadFromSheets() {
             if(!GOOGLE_SHEETS_URL) {
-                console.log("গুগল শীট URL দেওয়া নেই, ডিফল্ট ডেটা ব্যবহার হচ্ছে");
                 return DEFAULT_DATA;
             }
-            
             try {
                 const response = await fetch(GOOGLE_SHEETS_URL);
                 const csvText = await response.text();
                 const data = parseCSV(csvText);
-                
-                // ডেটা ম্যাপিং
                 const sheetData = {};
                 for(let i = 0; i < data.length; i++) {
                     if(data[i][0] && data[i][1]) {
                         sheetData[data[i][0].toLowerCase()] = data[i][1];
                     }
                 }
-                
-                // ম্যাপ করা ডেটা রিটার্ন
                 return {
-                    doctorName: sheetData['firstname'] && sheetData['lastname'] ? `${sheetData['firstname']} ${sheetData['lastname']}` : (sheetData['doctorname'] || DEFAULT_DATA.doctorName),
+                    doctorName: (sheetData['firstname'] && sheetData['lastname']) ? `${sheetData['firstname']} ${sheetData['lastname']}` : (sheetData['doctorname'] || DEFAULT_DATA.doctorName),
                     doctorBadge: sheetData['badge'] || DEFAULT_DATA.doctorBadge,
                     doctorTagline: sheetData['tagline'] || DEFAULT_DATA.doctorTagline,
                     doctorBio: sheetData['bio'] || DEFAULT_DATA.doctorBio,
@@ -434,99 +479,6 @@
             document.getElementById('footerText').innerHTML = data.footer;
             if(data.mapUrl) document.getElementById('googleMap').src = data.mapUrl;
             
-            // শিক্ষা
             const eduList = document.getElementById('educationList');
             eduList.innerHTML = data.education.map(edu => {
-                const parts = edu.split(' - ');
-                return `<li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>${parts[0]}</strong>${parts[1] ? ' - ' + parts[1] : ''}</span></li>`;
-            }).join('');
-            
-            // সেবাসমূহ
-            const servicesGrid = document.getElementById('servicesGrid');
-            servicesGrid.innerHTML = data.services.map((service, i) => `
-                <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="${i * 100}">
-                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas ${service.icon} text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">${service.title}</h3>
-                    <p class="text-gray-600">${service.desc}</p>
-                </div>
-            `).join('');
-            
-            // রিভিউ
-            const reviewsGrid = document.getElementById('reviewsGrid');
-            reviewsGrid.innerHTML = data.reviews.map((review, i) => `
-                <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="${i * 100}">
-                    <div class="flex gap-1 text-yellow-400 mb-4">
-                        ${Array(Math.floor(review.rating)).fill('<i class="fas fa-star"></i>').join('')}
-                        ${review.rating % 1 !== 0 ? '<i class="fas fa-star-half-alt"></i>' : ''}
-                        ${Array(5 - Math.ceil(review.rating)).fill('<i class="far fa-star"></i>').join('')}
-                    </div>
-                    <p class="text-gray-700 mb-4">"${review.text}"</p>
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-user-circle text-3xl text-blue-600"></i>
-                        <div><strong>${review.name}</strong><p class="text-gray-500 text-sm">${review.date}</p></div>
-                    </div>
-                </div>
-            `).join('');
-            
-            AOS.refresh();
-        }
-        
-        // মোবাইল মেনু
-        function initMobileMenu() {
-            const menuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuIcon = document.getElementById('menuIcon');
-            if(menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', () => {
-                    if(mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.remove('hidden');
-                        menuIcon.classList.remove('fa-bars');
-                        menuIcon.classList.add('fa-times');
-                    } else {
-                        mobileMenu.classList.add('hidden');
-                        menuIcon.classList.remove('fa-times');
-                        menuIcon.classList.add('fa-bars');
-                    }
-                });
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                        menuIcon.classList.remove('fa-times');
-                        menuIcon.classList.add('fa-bars');
-                    });
-                });
-            }
-        }
-        
-        // ফর্ম হ্যান্ডলার
-        function initForm() {
-            const form = document.getElementById('appointmentForm');
-            if(form) {
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const msg = document.getElementById('formMessage');
-                    msg.textContent = '✅ আপনার অ্যাপয়েন্টমেন্টের অনুরোধ সফল হয়েছে! আমরা শীঘ্রই যোগাযোগ করবো।';
-                    msg.classList.remove('hidden');
-                    form.reset();
-                    setTimeout(() => msg.classList.add('hidden'), 5000);
-                });
-            }
-        }
-        
-        // শুরু
-        async function init() {
-            const data = await loadFromSheets();
-            updateUI(data);
-            document.getElementById('loadingOverlay').style.display = 'none';
-            document.getElementById('mainContent').style.display = 'block';
-            AOS.init({ duration: 800, once: true, offset: 100 });
-            initMobileMenu();
-            initForm();
-        }
-        
-        init();
-    </script>
-</body>
-</html>
+               
