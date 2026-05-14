@@ -3,435 +3,441 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>ডাঃ আরাফাত হাসান | প্রিমিয়াম মেডিসিন স্পেশালিস্ট</title>
-    <meta name="description" content="ডাঃ আরাফাত হাসান - MBBS, FCPS (মেডিসিন), ধানমন্ডি, ঢাকা। আধুনিক ও প্রমাণভিত্তিক চিকিৎসা সেবা।">
+    <title>ডা. আরেফিন রহমান | প্রিমিয়াম কার্ডিওলজিস্ট পোর্টফোলিও</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
             font-family: 'Inter', sans-serif;
-            background: #fefcf5;
-            color: #1a2c3e;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e8f0fe 100%);
             overflow-x: hidden;
         }
-
-        /* প্রিমিয়াম গ্রেডিয়েন্ট অ্যানিমেশন */
-        .gradient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: linear-gradient(125deg, #f9f6ef 0%, #e8f3ec 50%, #fef5e7 100%);
-        }
-
-        /* স্টিকি নেভবার */
-        .navbar {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.92);
+        
+        /* গ্লাসমরফিজম কার্ড */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(12px);
-            z-index: 100;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(0, 80, 60, 0.1);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #1a7f5c, #2bbd8e);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .nav-links a {
-            margin-left: 2rem;
-            text-decoration: none;
-            color: #2c4a3b;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-
-        .nav-links a:hover { color: #1a7f5c; }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2rem 2rem 4rem;
-        }
-
-        /* হিরো সেকশন */
-        .hero {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 5rem;
-        }
-
-        .badge {
-            background: #e0f2e9;
-            color: #1a7f5c;
-            padding: 0.3rem 1rem;
-            border-radius: 60px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            color: #183f2d;
-            letter-spacing: -0.02em;
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, #f3e8c9, #e9ddb3);
-            padding: 0 0.2rem;
-        }
-
-        .hero-desc {
-            font-size: 1.1rem;
-            color: #3d5a4c;
-            margin: 1.2rem 0;
-            line-height: 1.5;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .btn-primary {
-            background: #1a7f5c;
-            color: white;
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.2s;
-        }
-
-        .btn-primary:hover {
-            background: #0f5e43;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #1a7f5c;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            color: #1a7f5c;
-            text-decoration: none;
-        }
-
-        .doctor-card-preview {
-            background: white;
             border-radius: 2rem;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e2dccd;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
-        .avatar-icon {
-            font-size: 4.5rem;
-            background: #ecf7f1;
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
+        
+        .glass-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            background: rgba(255, 255, 255, 0.85);
         }
-
-        /* স্ট্যাট সেকশন */
-        .stats-section {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            background: white;
-            border-radius: 2rem;
-            padding: 2rem;
-            margin-bottom: 4rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        
+        /* প্রিমিয়াম বাটন */
+        .premium-btn {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
-
-        .stat-item {
-            text-align: center;
-            flex: 1;
+        
+        .premium-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
         }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #1a7f5c;
+        
+        /* হিরো সেকশনের ব্যাকগ্রাউন্ড অ্যানিমেশন */
+        .hero-bg {
+            background: radial-gradient(circle at 20% 50%, rgba(59,130,246,0.1) 0%, rgba(255,255,255,0) 50%);
         }
-
-        /* সার্ভিস গ্রিড */
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: #183f2d;
+        
+        /* নেভিগেশন স্টিকি */
+        .sticky-nav {
+            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 2rem 1.5rem;
-            transition: all 0.25s;
-            border: 1px solid #ece3d4;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -12px rgba(26, 127, 92, 0.15);
-            border-color: #cbe5db;
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: #1a7f5c;
-            margin-bottom: 1rem;
-        }
-
-        /* রিভিউ সেকশন */
-        .review-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.8rem;
-            margin: 2rem 0;
-        }
-
+        
+        /* রিভিউ কার্ড */
         .review-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 1.5rem;
-            border: 1px solid #f0e7d8;
+            animation: fadeInUp 0.6s ease-out;
         }
-
-        .stars { color: #f4b942; margin: 0.5rem 0; }
-
-        /* ম্যাপ ও ফর্ম সেকশন */
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 3rem 0;
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
-        .map-card, .form-card {
-            background: white;
-            border-radius: 1.8rem;
-            padding: 1.5rem;
-            border: 1px solid #ede3d1;
+        
+        /* স্ক্রোলবার কাস্টমাইজ */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
-
-        iframe {
-            border-radius: 1rem;
-            width: 100%;
-            height: 280px;
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0;
         }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.9rem;
-            margin: 0.5rem 0;
-            border: 1px solid #ddd2bf;
-            border-radius: 1rem;
-            font-family: inherit;
-        }
-
-        .floating-wa {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #25D366;
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            z-index: 99;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            padding: 2rem;
-            border-top: 1px solid #e0d6c5;
-            color: #5b6e5e;
-        }
-
-        @media (max-width: 850px) {
-            .hero { grid-template-columns: 1fr; text-align: center; }
-            .two-col { grid-template-columns: 1fr; }
-            .navbar .nav-links { display: none; }
-            h1 { font-size: 2.2rem; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #2563eb, #1e3a8a);
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-<div class="gradient-bg"></div>
 
-<nav class="navbar">
-    <div class="logo"><i class="fas fa-heartbeat"></i> MedicoPro</div>
-    <div class="nav-links">
-        <a href="#">হোম</a>
-        <a href="#services">সেবা</a>
-        <a href="#about">ডাক্তার</a>
-        <a href="#contact">যোগাযোগ</a>
-    </div>
-</nav>
-
-<div class="container">
-    <!-- হিরো সেকশন -->
-    <div class="hero">
-        <div>
-            <span class="badge"><i class="fas fa-certificate"></i> বোর্ড সার্টিফাইড স্পেশালিস্ট</span>
-            <h1>আপনার স্বাস্থ্য <span class="highlight">আমাদের অগ্রাধিকার</span></h1>
-            <p class="hero-desc">ডাঃ আরাফাত হাসান — মেডিসিন বিশেষজ্ঞ, ১৫+ বছর অভিজ্ঞতা। আধুনিক ও প্রমাণভিত্তিক চিকিৎসায় প্রতিশ্রুতিবদ্ধ।</p>
-            <div class="btn-group">
-                <a href="tel:+8801712345678" class="btn-primary"><i class="fas fa-phone"></i> অ্যাপয়েন্টমেন্ট</a>
-                <a href="#services" class="btn-outline">সেবা দেখুন →</a>
+    <!-- ========== নেভিগেশন বার ========== -->
+    <nav class="sticky-nav fixed w-full z-50 top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-heartbeat text-3xl text-blue-600"></i>
+                <span class="text-2xl font-bold bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">ডা. আরেফিন</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="#home" class="hover:text-blue-600 transition">হোম</a>
+                <a href="#about" class="hover:text-blue-600 transition">এবাউট</a>
+                <a href="#services" class="hover:text-blue-600 transition">সেবাসমূহ</a>
+                <a href="#reviews" class="hover:text-blue-600 transition">রিভিউ</a>
+                <a href="#location" class="hover:text-blue-600 transition">লোকেশন</a>
+                <a href="#contact" class="hover:text-blue-600 transition">যোগাযোগ</a>
+            </div>
+            <a href="#contact" class="premium-btn text-white px-6 py-2 rounded-full font-semibold text-sm hidden md:block">
+                অ্যাপয়েন্টমেন্ট
+            </a>
+            <div class="md:hidden text-2xl cursor-pointer">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
-        <div class="doctor-card-preview">
-            <div class="avatar-icon"><i class="fas fa-user-md"></i></div>
-            <h3>ডাঃ আরাফাত হাসান</h3>
-            <p>MBBS, FCPS (Medicine)</p>
-            <p><i class="fas fa-map-marker-alt"></i> ধানমন্ডি, ঢাকা</p>
-        </div>
-    </div>
+    </nav>
 
-    <!-- স্ট্যাটস অ্যানিমেশন -->
-    <div class="stats-section" id="stats">
-        <div class="stat-item"><div class="stat-number" data-target="12500">0</div><p>+ রোগী সেবা</p></div>
-        <div class="stat-item"><div class="stat-number" data-target="15">0</div><p>+ বছর অভিজ্ঞতা</p></div>
-        <div class="stat-item"><div class="stat-number" data-target="98">0</div><p>% সন্তুষ্টি হার</p></div>
-    </div>
-
-    <!-- সার্ভিস সেকশন -->
-    <h2 class="section-title" id="services"><i class="fas fa-stethoscope"></i> বিশেষ সেবাসমূহ</h2>
-    <div class="service-grid">
-        <div class="service-card"><div class="service-icon"><i class="fas fa-heartbeat"></i></div><h3>কার্ডিওলজি কেয়ার</h3><p>উচ্চ রক্তচাপ, হার্টের সমস্যা প্রাথমিক চিকিৎসা ও কাউন্সেলিং।</p></div>
-        <div class="service-card"><div class="service-icon"><i class="fas fa-lungs"></i></div><h3>রেসপিরেটরি কেয়ার</h3><p>অ্যাজমা, সিওপিডি ও ফুসফুসের জটিলতার চিকিৎসা।</p></div>
-        <div class="service-card"><div class="service-icon"><i class="fas fa-database"></i></div><h3>ডায়াবেটিস ম্যানেজমেন্ট</h3><p>ডায়েট, ইনসুলিন ও লাইফস্টাইল গাইডলাইন।</p></div>
-        <div class="service-card"><div class="service-icon"><i class="fas fa-microphone-alt"></i></div><h3>টেলিমেডিসিন</h3><p>অনলাইনে সরাসরি ভিডিও কনসালটেশন।</p></div>
-    </div>
-
-    <!-- ডাক্তারের বায়ো + ম্যাপ -->
-    <div class="two-col" id="about">
-        <div class="map-card">
-            <h3><i class="fas fa-user-circle"></i> ডাঃ আরাফাত হাসান সম্পর্কে</h3>
-            <p style="margin-top: 1rem; line-height: 1.6;">ঢাকা মেডিকেল কলেজ থেকে এমবিবিএস ও পরে মেডিসিনে এফসিপিএস সম্পন্ন করি। গত ১৫ বছর ধরে ধানমন্ডিতে নিয়মিত প্র্যাকটিস করছি। প্রতিটি রোগীকে সময় দিয়ে শোনা ও প্রমাণভিত্তিক চিকিৎসা আমার মূলমন্ত্র।</p>
-            <p style="margin-top: 1rem;"><i class="fas fa-phone-alt"></i> <strong>মোবাইল:</strong> <a href="tel:+8801712345678" style="color:#1a7f5c;">+880 1712-345678</a></p>
-            <p><i class="fas fa-calendar-check"></i> <strong>অ্যাপয়েন্টমেন্ট:</strong> <a href="tel:+8801987654321" style="color:#1a7f5c;">+880 1987-654321</a></p>
-        </div>
-        <div class="map-card">
-            <h3><i class="fas fa-map-pin"></i> ক্লিনিক লোকেশন</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.907674432068!2d90.37629907499894!3d23.74613688881727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8e0f5e7c8d5b8f9d!2z4Kau4Ka-4Kao4KeN4Kak4Kao4KeB4Kaw!5e0!3m2!1sbn!2sbd!4v1700000000000!5m2!1sbn!2sbd" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </div>
-
-    <!-- রিভিউ সেকশন -->
-    <h2 class="section-title"><i class="fas fa-star"></i> রোগীরা যা বলেন</h2>
-    <div class="review-grid">
-        <div class="review-card"><p>“অসাধারণ ধৈর্য ও ব্যাখ্যা। ডাঃ আরাফাত ভাই সবকিছু খুব ক্লিয়ার বলেন।”</p><div class="stars">★★★★★</div><b>- মাহমুদা বেগম</b></div>
-        <div class="review-card"><p>“টেলিমেডিসিন সেবা চমৎকার। সময়মতো ডাক দেন ও প্রেসক্রিপশন পাঠান।”</p><div class="stars">★★★★★</div><b>- রায়হান কবির</b></div>
-        <div class="review-card"><p>“১৫ বছরের অভিজ্ঞতা পুরোপুরি ফুটে ওঠে। বিশ্বস্ত ডাক্তার।”</p><div class="stars">★★★★★</div><b>- নুসরাত জামান</b></div>
-    </div>
-
-    <!-- কন্টাক্ট ফর্ম + সোশ্যাল -->
-    <div class="two-col" id="contact">
-        <div class="form-card">
-            <h3><i class="fas fa-envelope"></i> দ্রুত বার্তা দিন</h3>
-            <form action="https://formsubmit.co/your-email@example.com" method="POST">
-                <input type="text" name="name" placeholder="আপনার নাম" required>
-                <input type="tel" name="phone" placeholder="মোবাইল নম্বর">
-                <textarea name="message" rows="3" placeholder="কী জানতে চান?"></textarea>
-                <button type="submit" class="btn-primary" style="width:100%;">পাঠিয়ে দিন</button>
-            </form>
-        </div>
-        <div class="form-card">
-            <h3><i class="fas fa-share-alt"></i> সোশ্যাল সংযোগ</h3>
-            <p style="margin: 1rem 0;">ফেসবুক, লিংকডইন, হোয়াটসঅ্যাপ এ যুক্ত হোন।</p>
-            <div style="display: flex; gap: 1.5rem; font-size: 2rem;">
-                <a href="#" style="color:#1a7f5c;"><i class="fab fa-facebook"></i></a>
-                <a href="#" style="color:#1a7f5c;"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/8801712345678" style="color:#1a7f5c;"><i class="fab fa-whatsapp"></i></a>
+    <!-- ========== হিরো সেকশন ========== -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
+        <div class="hero-bg absolute inset-0"></div>
+        <div class="container mx-auto px-6 py-20 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div class="inline-block px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-semibold mb-6">
+                        <i class="fas fa-stethoscope mr-2"></i> বিশ্বমানের কার্ডিওলজিস্ট
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                        <span class="bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">ডা. আরেফিন</span>
+                        <br>রহমান
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">২০+ বছরের অভিজ্ঞতা | ১০,০০০+ সফল চিকিৎসা | আধুনিক প্রযুক্তিতে সেবা</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="premium-btn text-white px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center gap-2">
+                            <i class="fas fa-calendar-check"></i> বুক অ্যাপয়েন্টমেন্ট
+                        </a>
+                        <a href="#about" class="glass-card px-8 py-4 rounded-full font-semibold text-blue-700 text-lg inline-flex items-center gap-2">
+                            <i class="fas fa-play-circle"></i> বিস্তারিত জানুন
+                        </a>
+                    </div>
+                    
+                    <!-- স্ট্যাটস -->
+                    <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-blue-100">
+                        <div>
+                            <div class="text-3xl font-bold text-blue-700">২০+</div>
+                            <div class="text-gray-500 text-sm">বছর অভিজ্ঞতা</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-blue-700">১০কে+</div>
+                            <div class="text-gray-500 text-sm">সফল চিকিৎসা</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-blue-700">৯৮%</div>
+                            <div class="text-gray-500 text-sm">পেশেন্ট সন্তুষ্টি</div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="1000" class="flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full blur-3xl opacity-20"></div>
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="ডা. আরেফিন রহমান" class="rounded-3xl shadow-2xl w-96 h-96 object-cover border-4 border-white">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-<footer>
-    © ২০২৫ ডাঃ আরাফাত হাসান | স্মার্ট হেল্থ কেয়ার সলিউশন
-</footer>
+    <!-- ========== এবাউট মি সেকশন ========== -->
+    <section id="about" class="py-24 bg-white/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">এবাউট <span class="text-blue-600">মি</span></h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                            <i class="fas fa-user-md text-blue-600"></i> আমার পরিচয়
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            আমি ডা. আরেফিন রহমান, একজন কার্ডিওলজিস্ট যিনি গত ২০ বছর ধরে হৃদরোগের চিকিৎসায় নিয়োজিত। এমবিবিএস, এফসিপিএস (কার্ডিওলজি) সম্পন্ন করার পর আমি যুক্তরাষ্ট্র, যুক্তরাজ্য এবং জার্মানির শীর্ষ হাসপাতালে প্রশিক্ষণ গ্রহণ করেছি।
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            আমার মূল লক্ষ্য হলো রোগীদের আধুনিক ও মানসম্মত চিকিৎসা সেবা প্রদান করা। আমি ব্যক্তিগত যত্নে বিশ্বাসী এবং প্রতিটি রোগীকে সময় দিয়ে বুঝে চিকিৎসা করি।
+                        </p>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                            <i class="fas fa-graduation-cap text-blue-600"></i> শিক্ষা ও প্রশিক্ষণ
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>এমবিবিএস</strong> - ঢাকা মেডিকেল কলেজ</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>এফসিপিএস (কার্ডিওলজি)</strong> - বিসিপিএস</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>ইন্টারভেনশনাল কার্ডিওলজি ফেলো</strong> - হার্ভার্ড মেডিকেল</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>পিএইচডি (কার্ডিওভাসকুলার রিসার্চ)</strong> - অক্সফোর্ড ইউনিভার্সিটি</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<a href="https://wa.me/8801712345678" class="floating-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <!-- ========== সেবাসমূহ ========== -->
+    <section id="services" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">আমার <span class="text-blue-600">সেবাসমূহ</span></h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">আধুনিক প্রযুক্তি ও বিশেষজ্ঞ চিকিৎসায় সজ্জিত সম্পূর্ণ সেবা</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heartbeat text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">কনসালটেশন</h3>
+                    <p class="text-gray-600">হৃদরোগ সংক্রান্ত সমস্যার বিস্তারিত নির্ণয় ও চিকিৎসা পরামর্শ। প্রতিটি রোগীকে পর্যাপ্ত সময় প্রদান।</p>
+                </div>
+                <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-line text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">কার্ডিয়াক ডায়াগনস্টিক</h3>
+                    <p class="text-gray-600">ইকোকার্ডিওগ্রাম, ইসিজি, স্ট্রেস টেস্ট, হল্টার মনিটরিং - উন্নত প্রযুক্তিতে।</p>
+                </div>
+                <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lungs text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">প্রিভেনটিভ কেয়ার</h3>
+                    <p class="text-gray-600">হৃদরোগ প্রতিরোধে লাইফস্টাইল ম্যানেজমেন্ট, ডায়েট চার্ট ও নিয়মিত চেকআপ।</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-    // স্ট্যাট কাউন্টার অ্যানিমেশন
-    const counters = document.querySelectorAll('.stat-number');
-    const speed = 150;
-    const animateStats = () => {
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const current = +counter.innerText;
-                const increment = target / speed;
-                if (current < target) {
-                    counter.innerText = Math.ceil(current + increment);
-                    setTimeout(updateCount, 20);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-            updateCount();
+    <!-- ========== রিভিউ সেকশন ========== -->
+    <section id="reviews" class="py-24 bg-white/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">পেশেন্ট <span class="text-blue-600">রিভিউ</span></h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 review-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">"ডা. আরেফিন ভাইয়ার চিকিৎসায় আমি ১০০% সন্তুষ্ট। তিনি খুব ধৈর্য সহকারে আমার সব সমস্যা শুনেছেন এবং সঠিক চিকিৎসা দিয়েছেন।"</p>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-user-circle text-3xl text-blue-600"></i>
+                        <div><strong>মোঃ শাহীন আলম</strong><p class="text-gray-500 text-sm">হৃদরোগী, ২০২৪</p></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 review-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">"অসাধারণ একজন ডাক্তার। রেগুলার চেকআপ করাই এবং আমার ব্লাড প্রেসার এখন পুরোপুরি কন্ট্রোলে। স্যারকে ধন্যবাদ।"</p>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-user-circle text-3xl text-blue-600"></i>
+                        <div><strong>নাজিয়া হোসেন</strong><p class="text-gray-500 text-sm">নিয়মিত রোগী</p></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 review-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">"প্রফেশনাল ও অভিজ্ঞ ডাক্তার। চেম্বারের পরিবেশ খুবই ক্লিন অ্যান্ড হাইজেনিক। সময়মত সেবা পান রোগীরা।"</p>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-user-circle text-3xl text-blue-600"></i>
+                        <div><strong>রাজিব চৌধুরী</strong><p class="text-gray-500 text-sm">সফল চিকিৎসা</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== গুগল ম্যাপ লোকেশন ========== -->
+    <section id="location" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">আমার <span class="text-blue-600">চেম্বার</span></h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="glass-card overflow-hidden" data-aos="fade-up">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.324563562395!2d90.3926532748357!3d23.74718408925106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8bd552c2b3b%3A0x4e8f1c4e4f5c6d7e!2sDhaka%20Medical%20College%20Hospital!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+                <div class="p-6 bg-white/80">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-map-marker-alt text-2xl text-blue-600"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">ব্লু ক্রস হাসপাতাল</h3>
+                            <p class="text-gray-600">২৩/বি, প্যান্থপথ, ঢাকা-১২০৫ (লিফট নং-৪, ৩য় তলা)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== কন্টাক্ট ফর্ম ও যোগাযোগ ========== -->
+    <section id="contact" class="py-24 bg-white/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">যোগাযোগ <span class="text-blue-600">করুন</span></h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="glass-card p-8" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6">অ্যাপয়েন্টমেন্ট ফর্ম</h3>
+                    <form id="appointmentForm" class="space-y-5">
+                        <input type="text" placeholder="আপনার নাম" required class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
+                        <input type="tel" placeholder="মোবাইল নম্বর" required class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
+                        <input type="email" placeholder="ইমেইল (ঐচ্ছিক)" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
+                        <select class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
+                            <option>সেবা নির্বাচন করুন</option>
+                            <option>কনসালটেশন</option>
+                            <option>কার্ডিয়াক ডায়াগনস্টিক</option>
+                            <option>প্রিভেনটিভ কেয়ার</option>
+                        </select>
+                        <textarea rows="4" placeholder="আপনার সমস্যা সংক্ষেপে লিখুন" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80"></textarea>
+                        <button type="submit" class="premium-btn text-white px-8 py-3 rounded-xl font-semibold w-full">
+                            <i class="fas fa-paper-plane mr-2"></i> অ্যাপয়েন্টমেন্ট বুক করুন
+                        </button>
+                    </form>
+                    <p id="formMessage" class="text-green-600 mt-4 text-center hidden"></p>
+                </div>
+                <div class="glass-card p-8" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6">সরাসরি যোগাযোগ</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fas fa-phone-alt text-blue-600 text-xl"></i></div>
+                            <div><p class="font-semibold">ফোন</p><p class="text-gray-600">+৮৮ ০১৭১২-৩৪৫৬৭৮</p></div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fab fa-whatsapp text-green-500 text-xl"></i></div>
+                            <div><p class="font-semibold">হোয়াটসঅ্যাপ</p><p class="text-gray-600">+৮৮ ০১৭১২-৩৪৫৬৭৮</p></div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fas fa-envelope text-blue-600 text-xl"></i></div>
+                            <div><p class="font-semibold">ইমেইল</p><p class="text-gray-600">dr.arefin@heartcare.com</p></div>
+                        </div>
+                        <div class="pt-4 border-t border-blue-100">
+                            <p class="font-semibold mb-2">চেম্বার সময়:</p>
+                            <p>সোম-শুক্র: সন্ধ্যা ৬টা - ৯টা</p>
+                            <p>শনিবার: সকাল ১০টা - দুপুর ১টা</p>
+                            <p>রবিবার: বন্ধ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ফুটার ========== -->
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="text-gray-400">© ২০২৫ ডা. আরেফিন রহমান - সর্বস্বত্ব সংরক্ষিত</p>
+            <p class="text-gray-500 text-sm mt-2">পাওয়ার্ড বাই প্রিমিয়াম হেলথকেয়ার টেকনোলজিস</p>
+        </div>
+    </footer>
+
+    <script>
+        // AOS ইনিশিয়ালাইজ
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
         });
-    };
-    // স্ক্রলে অ্যানিমেশন শুরু
-    const statsSection = document.querySelector('.stats-section');
-    let animated = false;
-    window.addEventListener('scroll', () => {
-        const sectionPos = statsSection.getBoundingClientRect().top;
-        if(sectionPos < window.innerHeight - 100 && !animated) {
-            animateStats();
-            animated = true;
+        
+        // ফর্ম সাবমিট হ্যান্ডলার
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const msgDiv = document.getElementById('formMessage');
+            msgDiv.textContent = '✅ আপনার অ্যাপয়েন্টমেন্টের অনুরোধ সফল হয়েছে! আমরা শীঘ্রই যোগাযোগ করবো।';
+            msgDiv.classList.remove('hidden');
+            this.reset();
+            setTimeout(() => msgDiv.classList.add('hidden'), 5000);
+        });
+        
+        // মোবাইল মেনু টগল (সিম্পল টগল)
+        const menuBtn = document.querySelector('.md\\:hidden.text-2xl');
+        if(menuBtn) {
+            menuBtn.addEventListener('click', function() {
+                const navLinks = document.querySelector('.hidden.md\\:flex');
+                if(navLinks) {
+                    navLinks.classList.toggle('hidden');
+                    navLinks.classList.toggle('flex');
+                    navLinks.classList.toggle('flex-col');
+                    navLinks.classList.toggle('absolute');
+                    navLinks.classList.toggle('top-16');
+                    navLinks.classList.toggle('left-0');
+                    navLinks.classList.toggle('w-full');
+                    navLinks.classList.toggle('bg-white/95');
+                    navLinks.classList.toggle('backdrop-blur-md');
+                    navLinks.classList.toggle('p-6');
+                    navLinks.classList.toggle('space-y-4');
+                }
+            });
         }
-    });
-</script>
+        
+        // নেভিগেশন স্ক্রল ইফেক্ট
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if(window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
 </body>
 </html>
