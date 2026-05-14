@@ -3,36 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>ডা. আরেফিন রহমান | প্রিমিয়াম কার্ডিওলজিস্ট পোর্টফোলিও</title>
+    <title>ডাক্তার পোর্টফোলিও | প্রিমিয়াম হেলথকেয়ার</title>
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome 6 -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- AOS Animation Library -->
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <style>
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
+        * { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
         
         body {
             background: linear-gradient(135deg, #f0f9ff 0%, #e8f0fe 100%);
             overflow-x: hidden;
         }
         
-        /* গ্লাসমরফিজম কার্ড */
         .glass-card {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(12px);
@@ -48,7 +42,6 @@
             background: rgba(255, 255, 255, 0.85);
         }
         
-        /* প্রিমিয়াম বাটন */
         .premium-btn {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             transition: all 0.3s ease;
@@ -60,42 +53,28 @@
             box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
         }
         
-        /* হিরো সেকশনের ব্যাকগ্রাউন্ড */
         .hero-bg {
             background: radial-gradient(circle at 20% 50%, rgba(59,130,246,0.1) 0%, rgba(255,255,255,0) 50%);
         }
         
-        /* নেভিগেশন স্টিকি */
         .sticky-nav {
             backdrop-filter: blur(16px);
             background: rgba(255, 255, 255, 0.85);
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
         }
         
-        /* মোবাইল মেনু অ্যানিমেশন */
         .mobile-menu {
             transition: all 0.3s ease;
-            transform-origin: top;
         }
         
         .mobile-menu.hidden {
             display: none;
         }
         
-        /* স্ক্রোলবার কাস্টমাইজ */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #e2e8f0;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #2563eb, #1e3a8a);
-            border-radius: 10px;
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #e2e8f0; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #2563eb, #1e3a8a); border-radius: 10px; }
         
-        /* লোডিং স্পিনার */
         .loader {
             border: 3px solid #f3f3f3;
             border-top: 3px solid #3b82f6;
@@ -113,7 +92,6 @@
 </head>
 <body>
 
-    <!-- লোডিং স্টেট -->
     <div id="loadingOverlay" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
         <div class="text-center">
             <div class="loader mx-auto mb-4"></div>
@@ -121,12 +99,12 @@
         </div>
     </div>
 
-    <!-- ========== নেভিগেশন বার ========== -->
+    <!-- নেভিগেশন -->
     <nav class="sticky-nav fixed w-full z-50 top-0">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <i class="fas fa-heartbeat text-3xl text-blue-600"></i>
-                <span id="doctorNameNav" class="text-2xl font-bold bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">ডা. আরেফিন</span>
+                <span id="doctorNameNav" class="text-2xl font-bold bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">ডা. আরেফিন রহমান</span>
             </div>
             <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
                 <a href="#home" class="hover:text-blue-600 transition">হোম</a>
@@ -139,12 +117,10 @@
             <a href="#contact" class="premium-btn text-white px-6 py-2 rounded-full font-semibold text-sm hidden md:block">
                 অ্যাপয়েন্টমেন্ট
             </a>
-            <!-- মোবাইল মেনু বাটন -->
             <button id="mobileMenuBtn" class="md:hidden text-2xl cursor-pointer focus:outline-none">
                 <i id="menuIcon" class="fas fa-bars"></i>
             </button>
         </div>
-        <!-- মোবাইল মেনু ড্রপডাউন -->
         <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-white/95 backdrop-blur-md px-6 py-4 shadow-lg">
             <div class="flex flex-col space-y-4">
                 <a href="#home" class="hover:text-blue-600 transition py-2">হোম</a>
@@ -158,20 +134,18 @@
         </div>
     </nav>
 
-    <!-- মূল কন্টেন্ট -->
     <main id="mainContent" style="display: none;">
-        <!-- ========== হিরো সেকশন ========== -->
+        <!-- হিরো সেকশন -->
         <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
             <div class="hero-bg absolute inset-0"></div>
             <div class="container mx-auto px-6 py-20 relative z-10">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div data-aos="fade-right" data-aos-duration="1000">
                         <div id="doctorBadge" class="inline-block px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-semibold mb-6">
-                            <i class="fas fa-stethoscope mr-2"></i> বিশ্বমানের বিশেষজ্ঞ
+                            <i class="fas fa-stethoscope mr-2"></i> বিশ্বমানের কার্ডিওলজিস্ট
                         </div>
                         <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-                            <span id="doctorFirstName" class="bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">ডা. আরেফিন</span>
-                            <br><span id="doctorLastName">রহমান</span>
+                            <span id="doctorFullName" class="bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">ডা. আরেফিন রহমান</span>
                         </h1>
                         <p id="doctorTagline" class="text-xl text-gray-600 mb-8 leading-relaxed">২০+ বছরের অভিজ্ঞতা | ১০,০০০+ সফল চিকিৎসা | আধুনিক প্রযুক্তিতে সেবা</p>
                         <div class="flex flex-wrap gap-4">
@@ -183,20 +157,10 @@
                             </a>
                         </div>
                         
-                        <!-- স্ট্যাটস -->
                         <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-blue-100">
-                            <div>
-                                <div id="statYears" class="text-3xl font-bold text-blue-700">২০+</div>
-                                <div class="text-gray-500 text-sm">বছর অভিজ্ঞতা</div>
-                            </div>
-                            <div>
-                                <div id="statPatients" class="text-3xl font-bold text-blue-700">১০কে+</div>
-                                <div class="text-gray-500 text-sm">সফল চিকিৎসা</div>
-                            </div>
-                            <div>
-                                <div id="statSatisfaction" class="text-3xl font-bold text-blue-700">৯৮%</div>
-                                <div class="text-gray-500 text-sm">পেশেন্ট সন্তুষ্টি</div>
-                            </div>
+                            <div><div id="statYears" class="text-3xl font-bold text-blue-700">২০+</div><div class="text-gray-500 text-sm">বছর অভিজ্ঞতা</div></div>
+                            <div><div id="statPatients" class="text-3xl font-bold text-blue-700">১০কে+</div><div class="text-gray-500 text-sm">সফল চিকিৎসা</div></div>
+                            <div><div id="statSatisfaction" class="text-3xl font-bold text-blue-700">৯৮%</div><div class="text-gray-500 text-sm">পেশেন্ট সন্তুষ্টি</div></div>
                         </div>
                     </div>
                     <div data-aos="fade-left" data-aos-duration="1000" class="flex justify-center">
@@ -209,7 +173,7 @@
             </div>
         </section>
 
-        <!-- ========== এবাউট মি সেকশন ========== -->
+        <!-- এবাউট সেকশন -->
         <section id="about" class="py-24 bg-white/50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16" data-aos="fade-up">
@@ -219,21 +183,15 @@
                 <div class="grid md:grid-cols-2 gap-12">
                     <div data-aos="fade-right">
                         <div class="glass-card p-8">
-                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
-                                <i class="fas fa-user-md text-blue-600"></i> আমার পরিচয়
-                            </h3>
-                            <p id="aboutBio" class="text-gray-700 leading-relaxed">আমি ডা. আরেফিন রহমান, একজন কার্ডিওলজিস্ট যিনি গত ২০ বছর ধরে হৃদরোগের চিকিৎসায় নিয়োজিত। এমবিবিএস, এফসিপিএস (কার্ডিওলজি) সম্পন্ন করার পর আমি যুক্তরাষ্ট্র, যুক্তরাজ্য এবং জার্মানির শীর্ষ হাসপাতালে প্রশিক্ষণ গ্রহণ করেছি।</p>
+                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-user-md text-blue-600"></i> আমার পরিচয়</h3>
+                            <p id="aboutBio" class="text-gray-700 leading-relaxed">আমি ডা. আরেফিন রহমান, একজন কার্ডিওলজিস্ট যিনি গত ২০ বছর ধরে হৃদরোগের চিকিৎসায় নিয়োজিত।</p>
                         </div>
                     </div>
                     <div data-aos="fade-left">
                         <div class="glass-card p-8">
-                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
-                                <i class="fas fa-graduation-cap text-blue-600"></i> শিক্ষা ও প্রশিক্ষণ
-                            </h3>
+                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-graduation-cap text-blue-600"></i> শিক্ষা ও প্রশিক্ষণ</h3>
                             <ul id="educationList" class="space-y-3">
                                 <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>এমবিবিএস</strong> - ঢাকা মেডিকেল কলেজ</span></li>
-                                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>এফসিপিএস (কার্ডিওলজি)</strong> - বিসিপিএস</span></li>
-                                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>ইন্টারভেনশনাল কার্ডিওলজি ফেলো</strong> - হার্ভার্ড মেডিকেল</span></li>
                             </ul>
                         </div>
                     </div>
@@ -241,34 +199,29 @@
             </div>
         </section>
 
-        <!-- ========== সেবাসমূহ ========== -->
+        <!-- সেবাসমূহ -->
         <section id="services" class="py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">আমার <span class="text-blue-600">সেবাসমূহ</span></h2>
                     <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
-                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">আধুনিক প্রযুক্তি ও বিশেষজ্ঞ চিকিৎসায় সজ্জিত সম্পূর্ণ সেবা</p>
                 </div>
-                <div id="servicesGrid" class="grid md:grid-cols-3 gap-8">
-                    <!-- ডাইনামিকভাবে JS এ লোড হবে -->
-                </div>
+                <div id="servicesGrid" class="grid md:grid-cols-3 gap-8"></div>
             </div>
         </section>
 
-        <!-- ========== রিভিউ সেকশন ========== -->
+        <!-- রিভিউ -->
         <section id="reviews" class="py-24 bg-white/50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">পেশেন্ট <span class="text-blue-600">রিভিউ</span></h2>
                     <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
                 </div>
-                <div id="reviewsGrid" class="grid md:grid-cols-3 gap-8">
-                    <!-- ডাইনামিকভাবে JS এ লোড হবে -->
-                </div>
+                <div id="reviewsGrid" class="grid md:grid-cols-3 gap-8"></div>
             </div>
         </section>
 
-        <!-- ========== গুগল ম্যাপ লোকেশন ========== -->
+        <!-- লোকেশন -->
         <section id="location" class="py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16" data-aos="fade-up">
@@ -276,23 +229,18 @@
                     <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
                 </div>
                 <div class="glass-card overflow-hidden" data-aos="fade-up">
-                    <iframe id="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.324563562395!2d90.3926532748357!3d23.74718408925106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8bd552c2b3b%3A0x4e8f1c4e4f5c6d7e!2sDhaka%20Medical%20College%20Hospital!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" 
-                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
+                    <iframe id="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.324563562395!2d90.3926532748357!3d23.74718408925106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8bd552c2b3b%3A0x4e8f1c4e4f5c6d7e!2sDhaka%20Medical%20College%20Hospital!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     <div class="p-6 bg-white/80">
                         <div class="flex items-center gap-3">
                             <i class="fas fa-map-marker-alt text-2xl text-blue-600"></i>
-                            <div>
-                                <h3 id="clinicName" class="font-bold text-lg">ব্লু ক্রস হাসপাতাল</h3>
-                                <p id="clinicAddress" class="text-gray-600">২৩/বি, প্যান্থপথ, ঢাকা-১২০৫ (লিফট নং-৪, ৩য় তলা)</p>
-                            </div>
+                            <div><h3 id="clinicName" class="font-bold text-lg">ব্লু ক্রস হাসপাতাল</h3><p id="clinicAddress" class="text-gray-600">২৩/বি, প্যান্থপথ, ঢাকা-১২০৫</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== কন্টাক্ট ফর্ম ========== -->
+        <!-- যোগাযোগ -->
         <section id="contact" class="py-24 bg-white/50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16" data-aos="fade-up">
@@ -305,46 +253,31 @@
                         <form id="appointmentForm" class="space-y-5">
                             <input type="text" placeholder="আপনার নাম" required class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
                             <input type="tel" placeholder="মোবাইল নম্বর" required class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
-                            <input type="email" placeholder="ইমেইল (ঐচ্ছিক)" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
+                            <input type="email" placeholder="ইমেইল" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
                             <select class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80">
                                 <option>সেবা নির্বাচন করুন</option>
                                 <option>কনসালটেশন</option>
                                 <option>কার্ডিয়াক ডায়াগনস্টিক</option>
                                 <option>প্রিভেনটিভ কেয়ার</option>
                             </select>
-                            <textarea rows="4" placeholder="আপনার সমস্যা সংক্ষেপে লিখুন" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80"></textarea>
-                            <button type="submit" class="premium-btn text-white px-8 py-3 rounded-xl font-semibold w-full">
-                                <i class="fas fa-paper-plane mr-2"></i> অ্যাপয়েন্টমেন্ট বুক করুন
-                            </button>
+                            <textarea rows="4" placeholder="আপনার সমস্যা লিখুন" class="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 bg-white/80"></textarea>
+                            <button type="submit" class="premium-btn text-white px-8 py-3 rounded-xl font-semibold w-full"><i class="fas fa-paper-plane mr-2"></i> অ্যাপয়েন্টমেন্ট বুক করুন</button>
                         </form>
                         <p id="formMessage" class="text-green-600 mt-4 text-center hidden"></p>
                     </div>
                     <div class="glass-card p-8" data-aos="fade-left">
                         <h3 class="text-2xl font-bold mb-6">সরাসরি যোগাযোগ</h3>
                         <div class="space-y-6">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fas fa-phone-alt text-blue-600 text-xl"></i></div>
-                                <div><p class="font-semibold">ফোন</p><p id="contactPhone" class="text-gray-600">+৮৮ ০১৭১২-৩৪৫৬৭৮</p></div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fab fa-whatsapp text-green-500 text-xl"></i></div>
-                                <div><p class="font-semibold">হোয়াটসঅ্যাপ</p><p id="contactWhatsapp" class="text-gray-600">+৮৮ ০১৭১২-৩৪৫৬৭৮</p></div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fas fa-envelope text-blue-600 text-xl"></i></div>
-                                <div><p class="font-semibold">ইমেইল</p><p id="contactEmail" class="text-gray-600">dr.arefin@heartcare.com</p></div>
-                            </div>
-                            <div class="pt-4 border-t border-blue-100">
-                                <p class="font-semibold mb-2">চেম্বার সময়:</p>
-                                <p id="clinicHours">সোম-শুক্র: সন্ধ্যা ৬টা - ৯টা<br>শনিবার: সকাল ১০টা - দুপুর ১টা<br>রবিবার: বন্ধ</p>
-                            </div>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fas fa-phone-alt text-blue-600 text-xl"></i></div><div><p class="font-semibold">ফোন</p><p id="contactPhone" class="text-gray-600">+৮৮ ০১৭১২-৩৪৫৬৭৮</p></div></div>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fab fa-whatsapp text-green-500 text-xl"></i></div><div><p class="font-semibold">হোয়াটসঅ্যাপ</p><p id="contactWhatsapp" class="text-gray-600">+৮৮ ০১৭১২-৩৪৫৬৭৮</p></div></div>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"><i class="fas fa-envelope text-blue-600 text-xl"></i></div><div><p class="font-semibold">ইমেইল</p><p id="contactEmail" class="text-gray-600">dr.arefin@heartcare.com</p></div></div>
+                            <div class="pt-4 border-t border-blue-100"><p class="font-semibold mb-2">চেম্বার সময়:</p><p id="clinicHours">সোম-শুক্র: সন্ধ্যা ৬টা - ৯টা<br>শনিবার: সকাল ১০টা - দুপুর ১টা<br>রবিবার: বন্ধ</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ফুটার -->
         <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12">
             <div class="container mx-auto px-6 text-center">
                 <div class="flex justify-center space-x-6 mb-6">
@@ -358,29 +291,29 @@
     </main>
 
     <script>
-        // ============================================
-        // Google Sheets কনফিগারেশন
-        // ক্লায়েন্ট নিচের URL টি পরিবর্তন করবে (আপনি টেমপ্লেট শিট তৈরি করে দেবেন)
-        // ============================================
+        // ========== গুগল শীট কনফিগারেশন ==========
+        // ★★★ আপনার গুগল শীটের CSV লিংক এখানে বসান ★★★
+        const GOOGLE_SHEETS_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCwq6mO-y0crFcMWzmycau_I7yhaq9TaJJIe2Z6tInS5SMYcVNb2SF0zWVAhaPFLQ40Fp3SjycShv-/pub?output=csv";  // যেমন: "https://docs.google.com/spreadsheets/d/xxxxx/export?format=csv"
         
-        // ডিফল্ট ডেটা (Google Sheets না থাকলে এটা ব্যবহার হবে)
+        // ডিফল্ট ডেটা (গুগল শীট না থাকলে এটা দেখাবে)
         const DEFAULT_DATA = {
-            doctor: {
-                firstName: "ডা. আরেফিন",
-                lastName: "রহমান",
-                badge: "বিশ্বমানের কার্ডিওলজিস্ট",
-                tagline: "২০+ বছরের অভিজ্ঞতা | ১০,০০০+ সফল চিকিৎসা | আধুনিক প্রযুক্তিতে সেবা",
-                bio: "আমি ডা. আরেফিন রহমান, একজন কার্ডিওলজিস্ট যিনি গত ২০ বছর ধরে হৃদরোগের চিকিৎসায় নিয়োজিত। এমবিবিএস, এফসিপিএস (কার্ডিওলজি) সম্পন্ন করার পর আমি যুক্তরাষ্ট্র, যুক্তরাজ্য এবং জার্মানির শীর্ষ হাসপাতালে প্রশিক্ষণ গ্রহণ করেছি। আমার মূল লক্ষ্য হলো রোগীদের আধুনিক ও মানসম্মত চিকিৎসা সেবা প্রদান করা।",
-                image: "https://randomuser.me/api/portraits/men/32.jpg",
-                statYears: "২০+",
-                statPatients: "১০কে+",
-                statSatisfaction: "৯৮%"
-            },
-            education: [
-                "এমবিবিএস - ঢাকা মেডিকেল কলেজ",
-                "এফসিপিএস (কার্ডিওলজি) - বিসিপিএস",
-                "ইন্টারভেনশনাল কার্ডিওলজি ফেলো - হার্ভার্ড মেডিকেল"
-            ],
+            doctorName: "ডা. আরেফিন রহমান",
+            doctorBadge: "বিশ্বমানের কার্ডিওলজিস্ট",
+            doctorTagline: "২০+ বছরের অভিজ্ঞতা | ১০,০০০+ সফল চিকিৎসা | আধুনিক প্রযুক্তিতে সেবা",
+            doctorBio: "আমি ডা. আরেফিন রহমান, একজন কার্ডিওলজিস্ট যিনি গত ২০ বছর ধরে হৃদরোগের চিকিৎসায় নিয়োজিত। এমবিবিএস, এফসিপিএস (কার্ডিওলজি) সম্পন্ন করার পর আমি যুক্তরাষ্ট্র, যুক্তরাজ্য এবং জার্মানির শীর্ষ হাসপাতালে প্রশিক্ষণ গ্রহণ করেছি। আমার মূল লক্ষ্য হলো রোগীদের আধুনিক ও মানসম্মত চিকিৎসা সেবা প্রদান করা।",
+            doctorImage: "https://randomuser.me/api/portraits/men/32.jpg",
+            statYears: "২০+",
+            statPatients: "১০কে+",
+            statSatisfaction: "৯৮%",
+            clinicName: "ব্লু ক্রস হাসপাতাল",
+            clinicAddress: "২৩/বি, প্যান্থপথ, ঢাকা-১২০৫ (লিফট নং-৪, ৩য় তলা)",
+            phone: "+৮৮ ০১৭১২-৩৪৫৬৭৮",
+            whatsapp: "+৮৮ ০১৭১২-৩৪৫৬৭৮",
+            email: "dr.arefin@heartcare.com",
+            clinicHours: "সোম-শুক্র: সন্ধ্যা ৬টা - ৯টা<br>শনিবার: সকাল ১০টা - দুপুর ১টা<br>রবিবার: বন্ধ",
+            footer: "© ২০২৫ ডা. আরেফিন রহমান - সর্বস্বত্ব সংরক্ষিত",
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.324563562395!2d90.3926532748357!3d23.74718408925106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8bd552c2b3b%3A0x4e8f1c4e4f5c6d7e!2sDhaka%20Medical%20College%20Hospital!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd",
+            education: ["এমবিবিএস - ঢাকা মেডিকেল কলেজ", "এফসিপিএস (কার্ডিওলজি) - বিসিপিএস", "ইন্টারভেনশনাল কার্ডিওলজি ফেলো - হার্ভার্ড মেডিকেল"],
             services: [
                 { icon: "fa-heartbeat", title: "কনসালটেশন", desc: "হৃদরোগ সংক্রান্ত সমস্যার বিস্তারিত নির্ণয় ও চিকিৎসা পরামর্শ।" },
                 { icon: "fa-chart-line", title: "কার্ডিয়াক ডায়াগনস্টিক", desc: "ইকোকার্ডিওগ্রাম, ইসিজি, স্ট্রেস টেস্ট, হল্টার মনিটরিং।" },
@@ -390,78 +323,125 @@
                 { name: "মোঃ শাহীন আলম", text: "ডা. আরেফিন ভাইয়ার চিকিৎসায় আমি ১০০% সন্তুষ্ট। তিনি খুব ধৈর্য সহকারে আমার সব সমস্যা শুনেছেন।", rating: 5, date: "২০২৪" },
                 { name: "নাজিয়া হোসেন", text: "অসাধারণ একজন ডাক্তার। আমার ব্লাড প্রেসার এখন পুরোপুরি কন্ট্রোলে।", rating: 5, date: "নিয়মিত রোগী" },
                 { name: "রাজিব চৌধুরী", text: "প্রফেশনাল ও অভিজ্ঞ ডাক্তার। চেম্বারের পরিবেশ খুবই ক্লিন অ্যান্ড হাইজেনিক।", rating: 4.5, date: "সফল চিকিৎসা" }
-            ],
-            clinic: {
-                name: "ব্লু ক্রস হাসপাতাল",
-                address: "২৩/বি, প্যান্থপথ, ঢাকা-১২০৫ (লিফট নং-৪, ৩য় তলা)",
-                phone: "+৮৮ ০১৭১২-৩৪৫৬৭৮",
-                whatsapp: "+৮৮ ০১৭১২-৩৪৫৬৭৮",
-                email: "dr.arefin@heartcare.com",
-                hours: "সোম-শুক্র: সন্ধ্যা ৬টা - ৯টা<br>শনিবার: সকাল ১০টা - দুপুর ১টা<br>রবিবার: বন্ধ",
-                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.324563562395!2d90.3926532748357!3d23.74718408925106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8bd552c2b3b%3A0x4e8f1c4e4f5c6d7e!2sDhaka%20Medical%20College%20Hospital!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
-            },
-            footer: "© ২০২৫ সর্বস্বত্ব সংরক্ষিত"
+            ]
         };
         
-        // ক্লায়েন্ট এখানে তার Google Sheets পাবলিক CSV URL দেবে
-        // গুগল শীট তৈরি করার পর "ফাইল > শেয়ার করুন > পাবলিশ করুন > সিএসভি লিংক কপি করুন"
-        const GOOGLE_SHEETS_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTb8dAjWz0xdXylXxom5QYqFP6VsQ4q_TcJgYqTBR6okHQKkZ6qTKHDlpo4kkuuI5Oa8dnpGJUtRuGm/pub?output=csv"; // খালি রাখলে ডিফল্ট ডেটা লোড হবে
+        // CSV পার্স করার ফাংশন
+        function parseCSV(csvText) {
+            const rows = [];
+            const lines = csvText.split('\n');
+            for(let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if(line) {
+                    // সহজ CSV পার্সিং (কমা সেপারেটেড)
+                    const values = [];
+                    let current = '';
+                    let inQuotes = false;
+                    for(let char of line) {
+                        if(char === '"') {
+                            inQuotes = !inQuotes;
+                        } else if(char === ',' && !inQuotes) {
+                            values.push(current.trim());
+                            current = '';
+                        } else {
+                            current += char;
+                        }
+                    }
+                    values.push(current.trim());
+                    rows.push(values);
+                }
+            }
+            return rows;
+        }
         
-        // ডেটা স্টোর
-        let siteData = {...DEFAULT_DATA};
-        
-        // Google Sheets থেকে ডেটা লোড
-        async function loadFromGoogleSheets() {
-            if (!GOOGLE_SHEETS_URL) {
-                console.log("Google Sheets URL দেওয়া নেই, ডিফল্ট ডেটা ব্যবহার হচ্ছে");
+        // গুগল শীট থেকে ডেটা লোড
+        async function loadFromSheets() {
+            if(!GOOGLE_SHEETS_URL) {
+                console.log("গুগল শীট URL দেওয়া নেই, ডিফল্ট ডেটা ব্যবহার হচ্ছে");
                 return DEFAULT_DATA;
             }
             
             try {
                 const response = await fetch(GOOGLE_SHEETS_URL);
                 const csvText = await response.text();
+                const data = parseCSV(csvText);
                 
-                // CSV পার্স করে ডেটা বের করব
-                const rows = csvText.split('\n').map(row => row.split(','));
+                // ডেটা ম্যাপিং
+                const sheetData = {};
+                for(let i = 0; i < data.length; i++) {
+                    if(data[i][0] && data[i][1]) {
+                        sheetData[data[i][0].toLowerCase()] = data[i][1];
+                    }
+                }
                 
-                // আপনার শীটের ফরম্যাট অনুযায়ী এখানে ডেটা ম্যাপ করুন
-                // উদাহরণ:
-                if(rows[1] && rows[1][0]) siteData.doctor.firstName = rows[1][0];
-                if(rows[1] && rows[1][1]) siteData.doctor.lastName = rows[1][1];
-                if(rows[1] && rows[1][2]) siteData.doctor.tagline = rows[1][2];
-                if(rows[1] && rows[1][3]) siteData.doctor.bio = rows[1][3];
-                if(rows[1] && rows[1][4]) siteData.clinic.phone = rows[1][4];
-                if(rows[1] && rows[1][5]) siteData.clinic.email = rows[1][5];
-                if(rows[1] && rows[1][6]) siteData.clinic.address = rows[1][6];
-                
-                return siteData;
+                // ম্যাপ করা ডেটা রিটার্ন
+                return {
+                    doctorName: sheetData['firstname'] && sheetData['lastname'] ? `${sheetData['firstname']} ${sheetData['lastname']}` : (sheetData['doctorname'] || DEFAULT_DATA.doctorName),
+                    doctorBadge: sheetData['badge'] || DEFAULT_DATA.doctorBadge,
+                    doctorTagline: sheetData['tagline'] || DEFAULT_DATA.doctorTagline,
+                    doctorBio: sheetData['bio'] || DEFAULT_DATA.doctorBio,
+                    doctorImage: sheetData['image'] || DEFAULT_DATA.doctorImage,
+                    statYears: sheetData['statyears'] || DEFAULT_DATA.statYears,
+                    statPatients: sheetData['statpatients'] || DEFAULT_DATA.statPatients,
+                    statSatisfaction: sheetData['statsatisfaction'] || DEFAULT_DATA.statSatisfaction,
+                    clinicName: sheetData['clinicname'] || DEFAULT_DATA.clinicName,
+                    clinicAddress: sheetData['clinicaddress'] || DEFAULT_DATA.clinicAddress,
+                    phone: sheetData['phone'] || DEFAULT_DATA.phone,
+                    whatsapp: sheetData['whatsapp'] || DEFAULT_DATA.whatsapp,
+                    email: sheetData['email'] || DEFAULT_DATA.email,
+                    clinicHours: sheetData['clinichours'] || DEFAULT_DATA.clinicHours,
+                    footer: sheetData['footer'] || DEFAULT_DATA.footer,
+                    mapUrl: sheetData['mapurl'] || DEFAULT_DATA.mapUrl,
+                    education: [
+                        sheetData['education1'] || DEFAULT_DATA.education[0],
+                        sheetData['education2'] || DEFAULT_DATA.education[1],
+                        sheetData['education3'] || DEFAULT_DATA.education[2]
+                    ],
+                    services: [
+                        { icon: "fa-heartbeat", title: sheetData['service1_title'] || DEFAULT_DATA.services[0].title, desc: sheetData['service1_desc'] || DEFAULT_DATA.services[0].desc },
+                        { icon: "fa-chart-line", title: sheetData['service2_title'] || DEFAULT_DATA.services[1].title, desc: sheetData['service2_desc'] || DEFAULT_DATA.services[1].desc },
+                        { icon: "fa-lungs", title: sheetData['service3_title'] || DEFAULT_DATA.services[2].title, desc: sheetData['service3_desc'] || DEFAULT_DATA.services[2].desc }
+                    ],
+                    reviews: [
+                        { name: sheetData['review1_name'] || DEFAULT_DATA.reviews[0].name, text: sheetData['review1_text'] || DEFAULT_DATA.reviews[0].text, rating: parseFloat(sheetData['review1_rating'] || DEFAULT_DATA.reviews[0].rating), date: sheetData['review1_date'] || DEFAULT_DATA.reviews[0].date },
+                        { name: sheetData['review2_name'] || DEFAULT_DATA.reviews[1].name, text: sheetData['review2_text'] || DEFAULT_DATA.reviews[1].text, rating: parseFloat(sheetData['review2_rating'] || DEFAULT_DATA.reviews[1].rating), date: sheetData['review2_date'] || DEFAULT_DATA.reviews[1].date },
+                        { name: sheetData['review3_name'] || DEFAULT_DATA.reviews[2].name, text: sheetData['review3_text'] || DEFAULT_DATA.reviews[2].text, rating: parseFloat(sheetData['review3_rating'] || DEFAULT_DATA.reviews[2].rating), date: sheetData['review3_date'] || DEFAULT_DATA.reviews[2].date }
+                    ]
+                };
             } catch(error) {
-                console.error("Google Sheets লোড করতে সমস্যা:", error);
+                console.error("গুগল শীট লোডে সমস্যা:", error);
                 return DEFAULT_DATA;
             }
         }
         
-        // UI আপডেট ফাংশন
+        // UI আপডেট
         function updateUI(data) {
-            // ডাক্তার তথ্য আপডেট
-            document.getElementById('doctorNameNav').innerText = data.doctor.firstName;
-            document.getElementById('doctorFirstName').innerText = data.doctor.firstName;
-            document.getElementById('doctorLastName').innerText = data.doctor.lastName;
-            document.getElementById('doctorBadge').innerHTML = `<i class="fas fa-stethoscope mr-2"></i> ${data.doctor.badge || 'বিশ্বমানের বিশেষজ্ঞ'}`;
-            document.getElementById('doctorTagline').innerText = data.doctor.tagline;
-            document.getElementById('aboutBio').innerText = data.doctor.bio;
-            if(data.doctor.image) document.getElementById('doctorImage').src = data.doctor.image;
-            document.getElementById('statYears').innerText = data.doctor.statYears;
-            document.getElementById('statPatients').innerText = data.doctor.statPatients;
-            document.getElementById('statSatisfaction').innerText = data.doctor.statSatisfaction;
+            document.getElementById('doctorNameNav').innerText = data.doctorName;
+            document.getElementById('doctorFullName').innerHTML = data.doctorName;
+            document.getElementById('doctorBadge').innerHTML = `<i class="fas fa-stethoscope mr-2"></i> ${data.doctorBadge}`;
+            document.getElementById('doctorTagline').innerText = data.doctorTagline;
+            document.getElementById('aboutBio').innerText = data.doctorBio;
+            if(data.doctorImage) document.getElementById('doctorImage').src = data.doctorImage;
+            document.getElementById('statYears').innerText = data.statYears;
+            document.getElementById('statPatients').innerText = data.statPatients;
+            document.getElementById('statSatisfaction').innerText = data.statSatisfaction;
+            document.getElementById('clinicName').innerText = data.clinicName;
+            document.getElementById('clinicAddress').innerText = data.clinicAddress;
+            document.getElementById('contactPhone').innerText = data.phone;
+            document.getElementById('contactWhatsapp').innerText = data.whatsapp;
+            document.getElementById('contactEmail').innerText = data.email;
+            document.getElementById('clinicHours').innerHTML = data.clinicHours;
+            document.getElementById('footerText').innerHTML = data.footer;
+            if(data.mapUrl) document.getElementById('googleMap').src = data.mapUrl;
             
-            // শিক্ষা আপডেট
+            // শিক্ষা
             const eduList = document.getElementById('educationList');
-            eduList.innerHTML = data.education.map(edu => 
-                `<li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>${edu.split(' - ')[0]}</strong> - ${edu.split(' - ')[1] || edu}</span></li>`
-            ).join('');
+            eduList.innerHTML = data.education.map(edu => {
+                const parts = edu.split(' - ');
+                return `<li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-600 mt-1"></i><span><strong>${parts[0]}</strong>${parts[1] ? ' - ' + parts[1] : ''}</span></li>`;
+            }).join('');
             
-            // সেবাসমূহ আপডেট
+            // সেবাসমূহ
             const servicesGrid = document.getElementById('servicesGrid');
             servicesGrid.innerHTML = data.services.map((service, i) => `
                 <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="${i * 100}">
@@ -473,10 +453,10 @@
                 </div>
             `).join('');
             
-            // রিভিউ আপডেট
+            // রিভিউ
             const reviewsGrid = document.getElementById('reviewsGrid');
             reviewsGrid.innerHTML = data.reviews.map((review, i) => `
-                <div class="glass-card p-6 review-card" data-aos="fade-up" data-aos-delay="${i * 100}">
+                <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="${i * 100}">
                     <div class="flex gap-1 text-yellow-400 mb-4">
                         ${Array(Math.floor(review.rating)).fill('<i class="fas fa-star"></i>').join('')}
                         ${review.rating % 1 !== 0 ? '<i class="fas fa-star-half-alt"></i>' : ''}
@@ -490,29 +470,16 @@
                 </div>
             `).join('');
             
-            // ক্লিনিক তথ্য আপডেট
-            document.getElementById('clinicName').innerText = data.clinic.name;
-            document.getElementById('clinicAddress').innerText = data.clinic.address;
-            document.getElementById('contactPhone').innerText = data.clinic.phone;
-            document.getElementById('contactWhatsapp').innerText = data.clinic.whatsapp;
-            document.getElementById('contactEmail').innerText = data.clinic.email;
-            document.getElementById('clinicHours').innerHTML = data.clinic.hours;
-            if(data.clinic.mapUrl) document.getElementById('googleMap').src = data.clinic.mapUrl;
-            document.getElementById('footerText').innerHTML = data.footer;
-            
-            // AOS রিফ্রেশ
             AOS.refresh();
         }
         
-        // মোবাইল মেনু টগল (ঠিক করা হয়েছে)
+        // মোবাইল মেনু
         function initMobileMenu() {
             const menuBtn = document.getElementById('mobileMenuBtn');
             const mobileMenu = document.getElementById('mobileMenu');
             const menuIcon = document.getElementById('menuIcon');
-            
             if(menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
+                menuBtn.addEventListener('click', () => {
                     if(mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.remove('hidden');
                         menuIcon.classList.remove('fa-bars');
@@ -523,8 +490,6 @@
                         menuIcon.classList.add('fa-bars');
                     }
                 });
-                
-                // মেনুর ভিতরের লিংকে ক্লিক করলে মেনু বন্ধ
                 mobileMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         mobileMenu.classList.add('hidden');
@@ -535,50 +500,32 @@
             }
         }
         
-        // ফর্ম সাবমিট
+        // ফর্ম হ্যান্ডলার
         function initForm() {
             const form = document.getElementById('appointmentForm');
             if(form) {
-                form.addEventListener('submit', function(e) {
+                form.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    const msgDiv = document.getElementById('formMessage');
-                    msgDiv.textContent = '✅ আপনার অ্যাপয়েন্টমেন্টের অনুরোধ সফল হয়েছে! আমরা শীঘ্রই যোগাযোগ করবো।';
-                    msgDiv.classList.remove('hidden');
-                    this.reset();
-                    setTimeout(() => msgDiv.classList.add('hidden'), 5000);
+                    const msg = document.getElementById('formMessage');
+                    msg.textContent = '✅ আপনার অ্যাপয়েন্টমেন্টের অনুরোধ সফল হয়েছে! আমরা শীঘ্রই যোগাযোগ করবো।';
+                    msg.classList.remove('hidden');
+                    form.reset();
+                    setTimeout(() => msg.classList.add('hidden'), 5000);
                 });
             }
         }
         
-        // ইনিশিয়ালাইজ সবকিছু
+        // শুরু
         async function init() {
-            const loadingDiv = document.getElementById('loadingOverlay');
-            const mainContent = document.getElementById('mainContent');
-            
-            // ডেটা লোড
-            const data = await loadFromGoogleSheets();
-            siteData = {...siteData, ...data};
-            
-            // UI আপডেট
-            updateUI(siteData);
-            
-            // লোডিং শেষ
-            loadingDiv.style.display = 'none';
-            mainContent.style.display = 'block';
-            
-            // AOS ইনিশিয়ালাইজ
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100
-            });
-            
-            // মোবাইল মেনু ইনিশিয়ালাইজ
+            const data = await loadFromSheets();
+            updateUI(data);
+            document.getElementById('loadingOverlay').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            AOS.init({ duration: 800, once: true, offset: 100 });
             initMobileMenu();
             initForm();
         }
         
-        // শুরু করুন
         init();
     </script>
 </body>
